@@ -5,8 +5,11 @@ html, body {
   font-size: 16px;
   height: 100%;
 }
-select, td span {
+select {
   font-size: 0.9rem;
+}
+td span {
+  font-size: 0.75rem;
 }
 .container {
   min-height: 100%;
@@ -18,6 +21,61 @@ select, td span {
 }
 #by-widgets, #basic-widgets, #detailed-widgets {
   display: none;
+}
+.basic-level, .detailed-level, .set-level {
+  max-width: 60px;
+}
+.versus {
+  text-align: center;
+  padding-top: 70px;
+  font-size: 3rem;
+}
+@media (max-width: 767) {
+  .versus {
+    padding-top: 0;
+  }
+}
+.description .name h1 {
+  font-size: 1.6rem;
+  text-align: center;
+}
+.description .image {
+  text-align: center;
+  margin-bottom: 15px;
+}
+.description .image img {
+  min-height: 120px;
+  max-height: 120px;
+}
+.description .type {
+  text-align: center;
+  font-size: 0.75rem;
+}
+.description .type .title {
+  font-weight: bold;
+}
+.stats-box {
+  padding: 0;
+}
+.stats-content {
+  padding: 5px 10px;
+  border: 1px solid #ccc;
+  margin: 4px;
+  min-height: 133px;
+}
+.stats-content table {
+  width: 100%;
+  font-size: 0.75rem;
+}
+.stats-content h4 {
+  margin-top: 0;
+  margin-bottom: 5px;
+  text-align: center;
+  font-size: 1rem;
+}
+.weapon-name {
+  text-align: center;
+  text-decoration: underline;
 }
 .button-box {
   text-align: center;
@@ -35,9 +93,6 @@ select, td span {
 .icon {
   width: 20px;
   height: 20px
-}
-.image {
-  max-height: 120px;
 }
 footer {
   text-align: center;

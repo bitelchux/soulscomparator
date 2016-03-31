@@ -11,10 +11,13 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.5/handlebars.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.10.0/js/bootstrap-select.min.js"></script>
+  <script src="https://code.highcharts.com/highcharts.js"></script>
+  <script src="https://code.highcharts.com/highcharts-more.js"></script>
 
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.10.0/css/bootstrap-select.min.css">
   <link rel="stylesheet" href="style.css">
+  <link rel="icon" type="image/png" href="/images/favicon.png">
 </head>
 <body>
   <div class="container">
@@ -34,20 +37,24 @@
           </div>
 
           <div class="form-group" id="by-widgets">
-            <label class="col-sm-2 control-label"></label>
-            <div class="col-sm-10">
+            <label class="col-sm-1 control-label"></label>
+            <div class="col-sm-11">
               <select data-item="1" class="set-comparator selectpicker" data-live-search="true" title="- Select -"></select>
+              <select data-level="1" class="set-level selectpicker" title="-"></select>
               <span class="vs">VS</span>
               <select data-item="2" class="set-comparator selectpicker" data-live-search="true" title="- Select -"></select>
+              <select data-level="2" class="set-level selectpicker" title="-"></select>
             </div>
           </div>
 
           <div class="form-group" id="basic-widgets">
-            <label class="col-sm-2 control-label"></label>
-            <div class="col-sm-10">
+            <label class="col-sm-1 control-label"></label>
+            <div class="col-sm-11">
               <select data-item="1" class="basic-comparator selectpicker" data-live-search="true" title="- Select -"></select>
+              <select data-level="1" class="basic-level selectpicker" title="-"></select>
               <span class="vs">VS</span>
               <select data-item="2" class="basic-comparator selectpicker" data-live-search="true" title="- Select -"></select>
+              <select data-level="2" class="basic-level selectpicker" title="-"></select>
             </div>
           </div>
 
@@ -55,38 +62,46 @@
           <div class="row" id="detailed-widgets">
             <div class="col-xs-12">
               <div class="form-group">
-                <label class="col-sm-2 control-label">Head:</label>
-                <div class="col-sm-10">
-                  <select data-item="1" class="head-comparator detailed selectpicker" data-live-search="true" title="- Select -"></select>
+                <label class="col-sm-1 control-label">Head:</label>
+                <div class="col-sm-11">
+                  <select data-item="1" data-piece="head" class="detailed-comparator selectpicker" data-live-search="true" title="- Select -"></select>
+                  <select data-level="1" data-piece="head" class="detailed-level selectpicker" title="-"></select>
                   <span class="vs">VS</span>
-                  <select data-item="2" class="head-comparator detailed selectpicker" data-live-search="true" title="- Select -"></select>
+                  <select data-item="2" data-piece="head" class="detailed-comparator selectpicker" data-live-search="true" title="- Select -"></select>
+                  <select data-level="2" data-piece="head" class="detailed-level selectpicker" title="-"></select>
                 </div>
               </div>
 
               <div class="form-group">
-                <label class="col-sm-2 control-label">Chest:</label>
-                <div class="col-sm-10">
-                  <select data-item="1" class="chest-comparator detailed selectpicker" data-live-search="true" title="- Select -"></select>
+                <label class="col-sm-1 control-label">Chest:</label>
+                <div class="col-sm-11">
+                  <select data-item="1" data-piece="chest" class="detailed-comparator selectpicker" data-live-search="true" title="- Select -"></select>
+                  <select data-level="1" data-piece="chest" class="detailed-level selectpicker" title="-"></select>
                   <span class="vs">VS</span>
-                  <select data-item="2" class="chest-comparator detailed selectpicker" data-live-search="true" title="- Select -"></select>
+                  <select data-item="2" data-piece="chest" class="detailed-comparator selectpicker" data-live-search="true" title="- Select -"></select>
+                  <select data-level="2" data-piece="chest" class="detailed-level selectpicker" title="-"></select>
                 </div>
               </div>
 
               <div class="form-group">
-                <label class="col-sm-2 control-label">Hands:</label>
-                <div class="col-sm-10">
-                  <select data-item="1" class="hands-comparator detailed selectpicker" data-live-search="true" title="- Select -"></select>
+                <label class="col-sm-1 control-label">Hands:</label>
+                <div class="col-sm-11">
+                  <select data-item="1" data-piece="hands" class="detailed-comparator selectpicker" data-live-search="true" title="- Select -"></select>
+                  <select data-level="1" data-piece="hands" class="detailed-level selectpicker" title="-"></select>
                   <span class="vs">VS</span>
-                  <select data-item="2" class="hands-comparator detailed selectpicker" data-live-search="true" title="- Select -"></select>
+                  <select data-item="2" data-piece="hands" class="detailed-comparator selectpicker" data-live-search="true" title="- Select -"></select>
+                  <select data-level="2" data-piece="hands" class="detailed-level selectpicker" title="-"></select>
                 </div>
               </div>
 
               <div class="form-group">
-                <label class="col-sm-2 control-label">Legs:</label>
-                <div class="col-sm-10">
-                  <select data-item="1" class="legs-comparator detailed selectpicker" data-live-search="true" title="- Select -"></select>
+                <label class="col-sm-1 control-label">Legs:</label>
+                <div class="col-sm-11">
+                  <select data-item="1" data-piece="legs" class="detailed-comparator selectpicker" data-live-search="true" title="- Select -"></select>
+                  <select data-level="1" data-piece="legs" class="detailed-level selectpicker" title="-"></select>
                   <span class="vs">VS</span>
-                  <select data-item="2" class="legs-comparator detailed selectpicker" data-live-search="true" title="- Select -"></select>
+                  <select data-item="2" data-piece="legs" class="detailed-comparator selectpicker" data-live-search="true" title="- Select -"></select>
+                  <select data-level="2" data-piece="legs" class="detailed-level selectpicker" title="-"></select>
                 </div>
               </div>
             </div>
@@ -111,40 +126,56 @@
     Data extracted from <a href="http://darksouls.wikia.com" title="Dark Souls Wikia">http://darksouls.wikia.com</a></p>
   </footer>
 </body>
-<script type="x-template" id="armor-template">
-<table class="table table-condensed">
-  <thead>
-    <tr>
-      <th>{{ piece }}</th>
-      <th class="value">{{ name1 }}</th>
-      <th class="value">{{ name2 }}</th>
-    </tr>
-  </thead>
-  <tbody>
-    {{{ body }}}
-  </tbody>
-</table>
+<script type="x-template" id="content-template">
+<div class="col-sm-12">
+  <div id="general-info" class="row">
+    <div class="col-sm-5 description">{{{ description1 }}}</div>
+    <div class="col-sm-2 versus">VS</div>
+    <div class="col-sm-5 description">{{{ description2 }}}</div>
+  </div>
+  <div id="stats" class="row">
+  {{{ body }}}
+  </div>
+</div>
 </script>
-
+<script type="x-template" id="stats-box-template">
+<div class="col-sm-6 stats-box">
+  <div class="stats-content">
+    <h4>{{ title }}</h4>
+    <table>
+      <tr>
+        <td></td>
+        <td class="weapon-name">{{ name1 }}</td>
+        <td></td>
+        <td class="weapon-name">{{ name2 }}</td>
+      </tr>
+      {{{ stats }}}
+    </table>
+  </div>
+</div>
+</script>
 <script type="x-template" id="attribute-template">
 <tr>
   <td>
     {{#icon}}
     <img src="/images/icon_{{ icon }}.png" title="{{ toTitleCase caption }}" class="icon"/>
     {{/icon}}
-    <span class="hidden-xs">{{ toTitleCase key }}</span>
+    <span>{{ toTitleCase key }}</span>
   </td>
   <td class="value {{ color1 }}">{{ value1 }}</td>
+  <td>{{ symbol }}</td>
   <td class="value {{ color2 }}">{{ value2 }}</td>
 </tr>
 </script>
 <script type="x-template" id="image-template">
-<tr>
-  <td>
-  </td>
-  <td class="value"><img src="{{ value1 }}" title="{{ name1 }}" class="image"/></td>
-  <td class="value"><img src="{{ value2 }}" title="{{ name2 }}" class="image"/></td>
-</tr>
+<div class="name"><h1>{{ name }}</h1></div>
+<div class="image">{{#if source}}<img src="{{ source }}" title="{{ name }}"/>{{/if}}</div>
+{{#if title1}}
+<div class="type"><span class="title">{{ toTitleCase title1 }}</span>: <span>{{ type1 }}</span></div>
+{{/if}}
+{{#if title2}}
+<div class="type"><span class="title">{{ toTitleCase title2 }}</span>: <span>{{ type2 }}</span></div>
+{{/if}}
 </script>
 <script src="bundle.js"></script>
 </html>
