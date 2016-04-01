@@ -11,6 +11,12 @@ select {
 td span {
   font-size: 0.75rem;
 }
+.navbar {
+  border-radius: 0;
+}
+.navbar-brand {
+  font-family: 'Optimus Princeps';
+}
 .container {
   min-height: 100%;
   margin-bottom: -25px;
@@ -23,17 +29,41 @@ td span {
   display: none;
 }
 .basic-level, .detailed-level, .set-level {
-  max-width: 60px;
+  max-width: 65px;
 }
-.versus {
+#general-info .versus {
   text-align: center;
   padding-top: 70px;
   font-size: 3rem;
 }
-@media (max-width: 767) {
-  .versus {
+@media (max-width: 767px) {
+  #general-info .versus {
     padding-top: 0;
   }
+  .form-group > div > span.versus {
+    display: block;
+  }
+}
+@media (min-width: 768px) and (max-width: 991px){
+  .basic-comparator, .detailed-comparator, .set-comparator {
+    width: 38% !important;
+  }
+  .form-group > div > span.versus {
+    padding: 0 2px;
+  }
+}
+@media (min-width: 992px) and (max-width: 1199px){
+  .basic-comparator, .detailed-comparator, .set-comparator {
+    width: 40.6% !important;
+  }
+}
+@media (min-width: 1200px) {
+  .basic-comparator, .detailed-comparator, .set-comparator {
+    width: 42.3% !important;
+  }
+}
+#detailed-widgets .form-group {
+  margin-bottom: 0;
 }
 .description .name h1 {
   font-size: 1.6rem;
@@ -61,11 +91,17 @@ td span {
   padding: 5px 10px;
   border: 1px solid #ccc;
   margin: 4px;
+}
+.stats-box.armor .stats-content {
   min-height: 133px;
+}
+.stats-box.weapon .stats-content {
+  min-height: 160px;
 }
 .stats-content table {
   width: 100%;
   font-size: 0.75rem;
+  table-layout: fixed;
 }
 .stats-content h4 {
   margin-top: 0;
@@ -76,6 +112,14 @@ td span {
 .weapon-name {
   text-align: center;
   text-decoration: underline;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+.comparison-symbol {
+  width: 25px;
+  max-width: 25px;
+  text-align: center;
 }
 .button-box {
   text-align: center;
@@ -99,4 +143,8 @@ footer {
   color: #666;
   height: 25px;
   font-size: 0.8rem;
+}
+@font-face {
+  font-family: 'Optimus Princeps';
+  src: url('/fonts/OptimusPrinceps.ttf');
 }
