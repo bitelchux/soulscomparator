@@ -17,6 +17,9 @@ td span {
 .navbar-brand {
   font-family: 'Optimus Princeps';
 }
+#game {
+  margin-top: 15px;
+}
 .container {
   min-height: 100%;
   margin-bottom: -25px;
