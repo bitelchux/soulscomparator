@@ -37,8 +37,8 @@
           <li>
             <select id="game">
               <option value="darksouls1">Dark Souls I</option>
-              <!-- option value="darksouls2" disabled>Dark Souls II</option>
-              <option value="darksouls3" disabled>Dark Souls III</option>
+              <option value="darksouls2">Dark Souls II</option>
+              <!-- option value="darksouls3" disabled>Dark Souls III</option>
               <option value="bloodborne" disabled>Bloodborne</option>
               <option value="demonsouls" disabled>Demon Souls</option -->
             </select>
@@ -193,7 +193,7 @@
 <tr>
   <td>
     {{#icon}}
-    <img src="images/icon_{{ icon }}.png" title="{{ toTitleCase caption }}" class="icon"/>
+    <img src="images/{{ icon }}.png" title="{{ toTitleCase caption }}" class="icon"/>
     {{/icon}}
     <span>{{ toTitleCase key }}</span>
   </td>
@@ -211,6 +211,15 @@
 {{#if title2}}
 <div class="type"><span class="title">{{ toTitleCase title2 }}</span>: <span>{{ type2 }}</span></div>
 {{/if}}
+</script>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-4851218-5', 'auto');
+  ga('send', 'pageview');
 </script>
 <script src="bundle.js"></script>
 </html>
