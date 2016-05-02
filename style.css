@@ -141,6 +141,9 @@ td span {
   width: 20px;
   height: 20px
 }
+.chart-box {
+  margin-top: 1.5rem;
+}
 footer {
   text-align: center;
   color: #666;
