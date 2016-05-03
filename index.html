@@ -190,12 +190,12 @@
 </div>
 </script>
 <script type="x-template" id="attribute-template">
-<tr>
-  <td>
+<tr class="attribute">
+  <td class="name">
     {{#icon}}
-    <img src="images/{{ icon }}.png" title="{{ toTitleCase caption }}" class="icon"/>
+    <img class="icon" src="images/{{ icon }}.png" title="{{ toTitleCase caption }}"/>
     {{/icon}}
-    <span>{{ toTitleCase key }}</span>
+    <span title="{{ toTitleCase tooltip }}" alt="{{ toTitleCase tooltip }}">{{ toTitleCase key }}</span>
   </td>
   <td class="value {{ color1 }}">{{ value1 }}</td>
   <td class="comparison-symbol">{{ symbol }}</td>

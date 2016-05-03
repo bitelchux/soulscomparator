@@ -96,10 +96,10 @@ td span {
   margin: 4px;
 }
 .stats-box.armor .stats-content {
-  min-height: 133px;
+  min-height: 148px;
 }
 .stats-box.weapon .stats-content {
-  min-height: 160px;
+  min-height: 172px;
 }
 .stats-content table {
   width: 100%;
@@ -119,11 +119,6 @@ td span {
   text-overflow: ellipsis;
   overflow: hidden;
 }
-.comparison-symbol {
-  width: 25px;
-  max-width: 25px;
-  text-align: center;
-}
 .button-box {
   text-align: center;
   padding: 1.5rem;
@@ -134,12 +129,22 @@ td span {
 .blue {
   color: blue;
 }
-.value {
-  text-align: center;
-}
-.icon {
+.attribute .icon {
   width: 20px;
   height: 20px
+}
+.attribute td.name {
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+.attribute .value {
+  text-align: center;
+}
+.attribute .comparison-symbol {
+  width: 25px;
+  max-width: 25px;
+  text-align: center;
 }
 .chart-box {
   margin-top: 1.5rem;
