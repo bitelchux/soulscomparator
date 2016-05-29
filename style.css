@@ -11,6 +11,9 @@ select {
 td span {
   font-size: 0.75rem;
 }
+hr {
+  margin: 1rem 0;
+}
 .navbar {
   border-radius: 0;
 }
@@ -38,32 +41,6 @@ td span {
   text-align: center;
   padding-top: 70px;
   font-size: 3rem;
-}
-@media (max-width: 767px) {
-  #general-info .versus {
-    padding-top: 0;
-  }
-  .form-group > div > span.versus {
-    display: block;
-  }
-}
-@media (min-width: 768px) and (max-width: 991px){
-  .basic-comparator, .detailed-comparator, .set-comparator {
-    width: 38% !important;
-  }
-  .form-group > div > span.versus {
-    padding: 0 2px;
-  }
-}
-@media (min-width: 992px) and (max-width: 1199px){
-  .basic-comparator, .detailed-comparator, .set-comparator {
-    width: 40.6% !important;
-  }
-}
-@media (min-width: 1200px) {
-  .basic-comparator, .detailed-comparator, .set-comparator {
-    width: 42.3% !important;
-  }
 }
 #detailed-widgets .form-group {
   margin-bottom: 0;
@@ -149,6 +126,43 @@ td span {
 .chart-box {
   margin-top: 1.5rem;
 }
+.social-buttons {
+  display: none;
+  background: #eee;
+  padding: 1rem 0;
+  margin: 1rem 0;
+}
+.social-input label, .social-input div {
+  text-align: center;
+  padding: 0 0.2rem;
+}
+.social-input input {
+  padding: 0 0.5rem;
+}
+.social-widgets {
+  text-align: center;
+  padding: 0 0.5rem;
+}
+.social-button {
+  margin: 0 1rem;
+  text-align: center;
+}
+.social-buttons input[name="share-link"] {
+  width: 100%;
+}
+.modal-dialog {
+  min-width: 420px;
+  width: 420px;
+}
+.modal-body .waiting {
+  text-align: center;
+}
+.modal-body .credits {
+  display: block;
+  text-align: center;
+  font-size: 0.6rem;
+  color: #aaa;
+}
 footer {
   text-align: center;
   color: #666;
@@ -158,4 +172,56 @@ footer {
 @font-face {
   font-family: 'Optimus Princeps';
   src: url('http://satanas.github.io/soulscomparator/fonts/OptimusPrinceps.ttf');
+}
+@media (max-width: 767px) {
+  #general-info .versus {
+    padding-top: 0;
+  }
+  .form-group > div > span.versus {
+    display: block;
+  }
+  .social-widgets {
+    width: 100%;
+    margin-bottom: 0;
+  }
+  .social-button {
+    margin: 0 1rem;
+    display: inline-block;
+  }
+  .stats-box.weapon .stats-content {
+    min-height: 135px;
+  }
+}
+@media (min-width: 768px) and (max-width: 991px){
+  .basic-comparator, .detailed-comparator, .set-comparator {
+    width: 38% !important;
+  }
+  .form-group > div > span.versus {
+    padding: 0 2px;
+  }
+  .social-input {
+    padding-bottom: 1rem;
+  }
+  .social-widgets {
+    width: 100%;
+  }
+  .social-button {
+    margin: 0 3rem;
+  }
+}
+@media (min-width: 992px) and (max-width: 1199px){
+  .basic-comparator, .detailed-comparator, .set-comparator {
+    width: 40.6% !important;
+  }
+  .social-button {
+    margin: 0 0.1rem;
+  }
+}
+@media (min-width: 1200px) {
+  .basic-comparator, .detailed-comparator, .set-comparator {
+    width: 42.3% !important;
+  }
+  .social-button {
+    margin: 0 0.5rem;
+  }
 }

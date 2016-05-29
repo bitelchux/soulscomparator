@@ -1,9 +1,18 @@
 <!DOCTYPE html>
-<html>
+<html itemscope itemtype="http://schema.org/WebApplication">
 <head>
   <title>Dark Souls Comparator</title>
   <meta charset=utf-8>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta itemprop="name" content="Souls Comparator">
+  <meta itemprop="description" content="Site to compare weapons, shields and armors in Dark Souls series">
+  <meta itemprop="image" content="http://satanas.github.io/soulscomparator/images/darksign.png">
+  <meta property="og:url" content="http://satanas.github.io/soulscomparator" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="SoulsComparator" />
+  <meta property="og:description" content="Site to compare weapons, shields and armors in Dark Souls series" />
+  <meta property="og:image" content="http://satanas.github.io/soulscomparator/images/darksign.png" />
+
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.1/jquery.min.js"></script>
   <script src="https://cdn.firebase.com/js/client/2.4.1/firebase.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
@@ -20,6 +29,21 @@
   <link rel="icon" type="image/png" href="images/favicon.png">
 </head>
 <body>
+  <div id="modal-dialog" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="modalDialog">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close modal-close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          <h4 class="modal-title" id="gridSystemModalLabel"></h4>
+        </div>
+        <div class="modal-body"></div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary" data-dismiss="modal">Ok</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <nav class="navbar navbar-inverse">
     <div class="container-fluid">
       <div class="navbar-header">
@@ -163,10 +187,14 @@
     <div class="col-sm-2 versus">VS</div>
     <div class="col-sm-5 description">{{{ description2 }}}</div>
   </div>
-  <hr/>
+
+  <div class="social-buttons row"></div>
+
   <div id="stats" class="row">
   {{{ body }}}
   </div>
+
+  <div class="social-buttons"></div>
 </div>
 </script>
 <script type="x-template" id="stats-box-template">
@@ -215,6 +243,29 @@
 <script type="x-template" id="chart-box-template">
 <div id="{{ id }}" class="chart-box {{ layout }}"></div>
 </script>
+<script type="x-template" id="social-template">
+<div class="form-inline">
+  <div class="form-group social-input col-sm-12 col-md-8 col-lg-8">
+    <label for="share-link" class="control-label col-sm-2">Share link</label>
+    <div class="col-sm-10">
+      <input type="text" class="form-control input-sm" name="share-link">
+    </div>
+  </div>
+  <div class="form-group col-md-4 col-lg-4 social-widgets">
+    <div class="form-group social-button">
+      <a href="https://twitter.com/share" class="twitter-share-button" data-text="Check out this awesome comparison!" data-url="{{ url }}" data-hashtags="SoulsComparator">Tweet</a>
+    </div>
+    <div class="form-group social-button">
+      <div class="g-plus" data-action="share" data-annotation="bubble" data-href="{{ url }}"></div>
+    </div>
+    <div class="form-group social-button">
+      <div id="fb-root"></div>
+      <div class="fb-share-button" data-href="{{ url }}" data-layout="button_count" data-mobile-iframe="true"></div>
+    </div>
+  </div>
+</div>
+</script>
+<!-- Analytics -->
 <script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
   (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
@@ -223,6 +274,28 @@
 
   ga('create', 'UA-4851218-5', 'auto');
   ga('send', 'pageview');
+</script>
+<script>
+function loadSocial() {
+  // Twitter
+  !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');
+
+  // Google Plus
+  (function() {
+    var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+    po.src = 'https://apis.google.com/js/platform.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+  })();
+
+  // Facebook
+  (function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = "//connect.facebook.net/es_ES/sdk.js#xfbml=1&version=v2.6&appId=1523150194674801";
+    fjs.parentNode.insertBefore(js, fjs);
+  }(document, 'script', 'facebook-jssdk'));
+}
 </script>
 <script src="bundle.js"></script>
 </html>
