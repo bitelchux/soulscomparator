@@ -192,13 +192,17 @@
     </div>
   </div>
 
+  {{#if social.up}}
   <div class="social-buttons row"></div>
+  {{/if}}
 
   <div id="stats" class="row">
   {{{ body }}}
   </div>
 
-  <div class="social-buttons"></div>
+  {{#if social.down}}
+  <div class="social-buttons row"></div>
+  {{/if}}
 </div>
 </script>
 <script type="x-template" id="stats-box-template">
