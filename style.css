@@ -73,7 +73,7 @@ hr {
   margin: 4px;
 }
 .stats-box.armor .stats-content {
-  min-height: 148px;
+  min-height: 152px;
 }
 .stats-box.weapon .stats-content {
   min-height: 172px;
@@ -99,6 +99,9 @@ hr {
 .button-box {
   text-align: center;
   padding: 1.5rem;
+}
+.new-comparison-widgets {
+  display: none;
 }
 .red {
   color: red;

@@ -13,16 +13,6 @@
   <meta property="og:description" content="Site to compare weapons, shields and armors in Dark Souls series" />
   <meta property="og:image" content="http://satanas.github.io/soulscomparator/images/darksign.png" />
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.1/jquery.min.js"></script>
-  <script src="https://cdn.firebase.com/js/client/2.4.1/firebase.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/backbone.js/1.3.2/backbone-min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.5/handlebars.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.10.0/js/bootstrap-select.min.js"></script>
-  <script src="https://code.highcharts.com/highcharts.js"></script>
-  <script src="https://code.highcharts.com/highcharts-more.js"></script>
-
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.10.0/css/bootstrap-select.min.css">
   <link rel="stylesheet" href="style.css">
@@ -76,7 +66,7 @@
     <div class="row">
       <div class="col-sm-12">
 
-        <div class="form-horizontal2">
+        <div id="comparison-widgets" class="form-horizontal2">
           <div class="form-group">
             <label class="col-sme-2 control-label">Compare:</label>
             <div class="col-sme-10">
@@ -164,12 +154,26 @@
           </div>
         </div> <!-- form horizontal -->
 
+        <!-- Comparison button top -->
+        <div class="row button-box new-comparison-widgets">
+          <div class="col-sm-12">
+            <button class="btn btn-primary new-comparison">New comparison</button>
+          </div>
+        </div>
+
       </div> <!-- widgets column -->
     </div> <!-- widgets row -->
 
     <div class="row comparison-container">
       <div class="col-xs-12">
         <div id="comparison"></div>
+      </div>
+    </div>
+
+    <!-- Comparison button bottom -->
+    <div class="row button-box new-comparison-widgets">
+      <div class="col-sm-12">
+        <button class="btn btn-primary new-comparison">New comparison</button>
       </div>
     </div>
   </div> <!-- container -->
@@ -229,7 +233,7 @@
 <tr class="attribute">
   <td class="name">
     {{#icon}}
-    <img class="icon" src="images/{{ icon }}.png" title="{{ toTitleCase caption }}"/>
+    <img class="icon" src="{{ root }}/images/{{ icon }}.png" title="{{ toTitleCase caption }}"/>
     {{/icon}}
     <span title="{{ toTitleCase tooltip }}" alt="{{ toTitleCase tooltip }}">{{ toTitleCase key }}</span>
   </td>
@@ -305,5 +309,16 @@ function loadSocial() {
   }(document, 'script', 'facebook-jssdk'));
 }
 </script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.1/jquery.min.js"></script>
+<script src="https://www.gstatic.com/firebasejs/3.6.5/firebase.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/backbone.js/1.3.2/backbone-min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.5/handlebars.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.10.0/js/bootstrap-select.min.js"></script>
+
 <script src="bundle.js"></script>
+
+<script src="https://code.highcharts.com/highcharts.js"></script>
+<script src="https://code.highcharts.com/highcharts-more.js"></script>
 </html>
